@@ -2,9 +2,7 @@ package com.example.javabasics.stream;
 
 import com.example.mybatis.model.User;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -14,11 +12,38 @@ import java.util.stream.Stream;
  */
 public class JavaStream {
     public static void main(String[] args) {
-        streamTest();
+//        streamTest();
 //        parallelStreamTest();
 
 //        testGetTargetUsers();
+//        String s = "1-2--3";
+//        String[] split = s.split("-", -1);
+//        System.out.println(split[split.length - 1]);
+//        JavaStream javaStream = new JavaStream();
+//        for (int i = 0; i < 2; i++) {
+//            test(i);
+//        }
 
+//        List<String> strings = new ArrayList<>();
+//        strings.add("1");
+//        strings.add("2");
+//        strings.add("3");
+//        Iterator<String> iterator = strings.iterator();
+//        while (iterator.hasNext()){
+//            String next = iterator.next();
+//            if (next.equals("2")){
+//                iterator.remove();
+//            }
+//        }
+
+    }
+
+    public static List<Integer> test(int i){
+        List<Integer> integers = new ArrayList<>();
+        List<Integer> integers1 = new ArrayList<>();
+        integers1.add(i);
+        integers.addAll(integers1);
+        return integers;
     }
 
     /**
@@ -84,6 +109,7 @@ public class JavaStream {
         Integer integer = i1.stream().reduce((a, b) -> a * b).orElse(0);
         System.out.println(integer);
 
+        System.out.println(0/1);
     }
 
     public static void testGetTargetUsers() {
