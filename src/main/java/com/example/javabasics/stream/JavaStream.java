@@ -1,8 +1,13 @@
 package com.example.javabasics.stream;
 
+import cn.hutool.core.date.StopWatch;
 import com.example.mybatis.model.User;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -35,6 +40,27 @@ public class JavaStream {
 //                iterator.remove();
 //            }
 //        }
+//         ArrayList<User> users = new ArrayList<>();
+//         int size = users.size();
+//         boolean empty = users.isEmpty();
+        // Map<Integer, String> collect = users.stream().collect(Collectors.toMap(User::getId, User::getName));
+        // String s = collect.get(0);
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start("测试开始1");
+        try {
+
+            Thread.sleep(1000);
+            stopWatch.stop();
+            stopWatch.start("测试开始2");
+            Thread.sleep(2000);
+            stopWatch.stop();
+            stopWatch.start("测试开始3");
+            Thread.sleep(3000);
+            stopWatch.stop();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(stopWatch.prettyPrint(TimeUnit.MILLISECONDS));
 
     }
 
